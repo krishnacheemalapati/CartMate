@@ -4,20 +4,28 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import Home from "./Pages/Home";
-import { AuthContextProvider, UserAuth } from "./Context/AuthContext";
+import { AuthContextProvider } from "./Context/AuthContext";
+import ProtectedRoute from "./Pages/ProtectedRoute";
+import Dashboard from "./Pages/Dashboard";
 
 function App() {
-  // const { user, logout } = UserAuth();
-
   return (
     <BrowserRouter>
       <div className="App">
-        <NavbarComp />
         <AuthContextProvider>
+          <NavbarComp />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Signup />} />
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute to="/">
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </AuthContextProvider>
       </div>

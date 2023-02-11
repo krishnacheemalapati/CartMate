@@ -1,6 +1,14 @@
 import React from "react";
+import { UserAuth } from "../Context/AuthContext";
+import { Navigate } from "react-router-dom";
 
 function Home() {
+  const { user } = UserAuth();
+
+  if (user) {
+    return <Navigate to="/dashboard" />;
+  }
+
   return (
     <div className="vh-100 d-flex justify-content-center align-items-center gap-3 text-white">
       <div
