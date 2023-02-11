@@ -55,7 +55,6 @@ function Dashboard() {
       {/* <h1>{user.email}</h1>
       <button onClick={handleClick}>Logout</button> */}
       <ItemList items={carts[0].items}/>
-    <div className="vh-100 d-flex align-items-center justify-content-center">
       <CartList />
     </div>
     
