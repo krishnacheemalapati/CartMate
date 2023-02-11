@@ -69,9 +69,12 @@ function Login() {
           <button className="sign-up">Sign in</button>
         </form>
         <p className="already-have" style={{ color: "white" }}>
-          Already have an account?{" "}
-          <Link style={{ color: "white", textDecoration: "none" }} to="/">
-            Sign in.
+          Don't have an account?{" "}
+          <Link
+            style={{ color: "white", textDecoration: "none" }}
+            to="/register"
+          >
+            Sign up.
           </Link>
         </p>
       </div>
