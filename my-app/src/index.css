@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -16,24 +16,19 @@ html {
   background-color: #2d272d;
 }
 
-
-
 /* bad practice sry guys*/
 .signup-main {
   display: flex;
   justify-content: center;
-
-
-
+  height: 100vh;
 }
 
 .signup-info {
   color: white;
-  padding: 5rem;
+  padding: 15rem 5rem;
   padding-bottom: 20rem;
 
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
-
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .check {
@@ -47,11 +42,9 @@ html {
 }
 
 .signup-container {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
-  padding: 5rem;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  padding: 15rem 5rem;
   padding-bottom: 20rem;
-
-
 }
 
 .already-have {
@@ -66,7 +59,6 @@ html {
   background-color: #1675e1;
   color: white;
   border: none;
-
 }
 
 .signUp {
@@ -75,7 +67,6 @@ html {
   border-radius: 20px !important;
   background-color: #1675e1 !important;
   border: none !important;
-
 }
 
 .signIn {
@@ -86,7 +77,6 @@ html {
   border-style: solid;
   border-width: 4px !important;
   border-color: white !important;
-
 }
 
 .cart {
@@ -100,37 +90,23 @@ html {
 
 .nav-bar {
   background-color: rgb(50, 50, 55);
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
-
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 html,
 #root {
   background: rgb(2, 0, 36);
-  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(50, 50, 55, 1) 0%, #20212a 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(50, 50, 55, 1) 0%,
+    #20212a 100%
+  );
 }
-
-
-
-
-
-
 
 .signup-main {
   display: flex;
   justify-content: center;
-
-
-
-}
-
-
-.signup-container {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
-  padding: 5rem;
-  padding-bottom: 20rem;
-
-
 }
 
 .email,
@@ -142,9 +118,6 @@ html,
   border-color: rgb(70, 62, 62);
   border-radius: 10px;
   border-width: 3px;
-
-
-
 }
 
 .sign-up {
@@ -154,26 +127,11 @@ html,
   background-color: #1675e1;
   color: white;
   border: none;
-
 }
 
 .already-have {
   text-align: center;
   margin-top: 35px;
-}
-
-.signup-title {
-  display: flex;
-  max-width: 500px;
-}
-
-.signup-info {
-  color: white;
-  padding: 5rem;
-  padding-bottom: 20rem;
-
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
-
 }
 
 .check {
@@ -189,20 +147,11 @@ html,
 .password-log:focus {
   outline: 3px solid rgb(56, 137, 162);
   transition: outline-width 50ms ease-in;
-
-
-
 }
-
 
 .sign-up:disabled {
   opacity: 50%;
 }
-
-
-
-
-
 
 .p-label {
   display: flex;
@@ -224,9 +173,8 @@ html,
   padding: 5rem;
   padding-bottom: 20rem;
 
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   width: 45rem;
-
 }
 
 .login-main {

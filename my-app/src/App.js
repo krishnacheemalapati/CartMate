@@ -3,6 +3,7 @@ import NavbarComp from "./Components/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
+import Home from "./Pages/Home";
 import { AuthContextProvider } from "./Context/AuthContext";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <NavbarComp />
         <AuthContextProvider>
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Signup />} />
           </Routes>
