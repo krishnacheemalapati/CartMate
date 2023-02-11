@@ -1,6 +1,8 @@
 import React from "react";
 import { UserAuth } from "../Context/AuthContext";
 import ItemList from "./ItemList";
+import Button from "react-bootstrap/Button";
+import CartList from "../Components/CartList";
 
 function Dashboard() {
   // const { user, logout } = UserAuth();
@@ -53,6 +55,8 @@ function Dashboard() {
       {/* <h1>{user.email}</h1>
       <button onClick={handleClick}>Logout</button> */}
       <ItemList items={carts[0].items}/>
+    <div className="vh-100 d-flex align-items-center justify-content-center">
+      <CartList />
     </div>
     
   );

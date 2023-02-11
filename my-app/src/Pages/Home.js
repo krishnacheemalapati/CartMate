@@ -1,6 +1,6 @@
 import React from "react";
 import { UserAuth } from "../Context/AuthContext";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 function Home() {
   const { user } = UserAuth();
@@ -20,11 +20,11 @@ function Home() {
           Shop together, save together with a shared shopping cart app that
           makes group purchasing simple and efficient.
         </p>
-        <a href="/register">
+        <Link to="/register">
           <button className="w-100 btn btn-primary">
             Sign up now for free
           </button>
-        </a>
+        </Link>
       </div>
 
       <div
