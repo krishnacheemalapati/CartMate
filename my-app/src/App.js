@@ -7,6 +7,7 @@ import Home from "./Pages/Home";
 import { AuthContextProvider } from "./Context/AuthContext";
 import ProtectedRoute from "./Pages/ProtectedRoute";
 import Dashboard from "./Pages/Dashboard";
+import JoinCart from "./Pages/JoinCart";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route path="/cart/:id" element={<JoinCart />} />
           </Routes>
         </AuthContextProvider>
       </div>
