@@ -1,15 +1,16 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import CartMate from "../cartmate.png"
+import Button from 'react-bootstrap/Button';
 
-function BrandExample() {
+function NavbarComp() {
     return (
         <>
 
 
             <Navbar bg="dark" variant="dark" >
                 <Container >
-                    <Navbar.Brand href="#home" >
+                    <Navbar.Brand href="/" >
                         <img
                             alt=""
                             src={CartMate}
@@ -18,10 +19,14 @@ function BrandExample() {
                         />{' '}
                         CartMate
                     </Navbar.Brand>
+                    <div>
+                        <Button href="/register" className="mx-3">Sign Up</Button>
+                        <Button href="/login">Login</Button>
+                    </div>
                 </Container>
             </Navbar>
         </>
     );
 }
 
-export default BrandExample;
+export default NavbarComp;
