@@ -8,7 +8,7 @@ function NavbarComp() {
     <Navbar bg="dark" variant="dark" className="vw-100 position-absolute">
       <Container>
         <Navbar.Brand href="/">
-          <img alt="" src={CartMate} width="65" height="65" /> CartMate
+          <img alt="" src={CartMate} width="65" height="65" />
         </Navbar.Brand>
         <div>
           <Button href="/register" className="mx-3">
