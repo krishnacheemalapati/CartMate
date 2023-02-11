@@ -18,6 +18,7 @@ function NavbarComp() {
         <Link to={user ? "/dashboard" : "/"}>
           <Navbar.Brand>
             <img alt="" src={CartMate} width="65" height="65" />
+            CartMate
           </Navbar.Brand>
         </Link>
         {user && (
