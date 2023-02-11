@@ -12,7 +12,11 @@ function Home() {
           Shop together, save together with a shared shopping cart app that
           makes group purchasing simple and efficient.
         </p>
-        <button className="w-100 btn btn-primary">Sign up now for free</button>
+        <a href="/register">
+          <button className="w-100 btn btn-primary">
+            Sign up now for free
+          </button>
+        </a>
       </div>
 
       <div
