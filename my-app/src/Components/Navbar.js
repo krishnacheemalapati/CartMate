@@ -3,6 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import CartMate from "../cartmate.png";
 import Button from "react-bootstrap/Button";
 import { UserAuth } from "../Context/AuthContext";
+import { Link } from "react-router-dom";
 
 function NavbarComp() {
   const { user, logout } = UserAuth();
@@ -14,23 +15,27 @@ function NavbarComp() {
   return (
     <Navbar bg="dark" variant="dark" className="vw-100 position-absolute">
       <Container>
-        <Navbar.Brand href={user ? "/dashboard" : "/"}>
-          <img alt="" src={CartMate} width="65" height="65" />
-        </Navbar.Brand>
+        <Link to={user ? "/dashboard" : "/"}>
+          <Navbar.Brand>
+            <img alt="" src={CartMate} width="65" height="65" />
+          </Navbar.Brand>
+        </Link>
         {user && (
           <div>
-            <Button href="/dashboard" className="mx-3">
-              Dashboard
-            </Button>
+            <Link to="/dashboard">
+              <Button className="mx-3">Dashboard</Button>
+            </Link>
             <Button onClick={handleClick}>Logout</Button>
           </div>
         )}
         {!user && (
           <div>
-            <Button href="/register" className="mx-3">
-              Sign Up
-            </Button>
-            <Button href="/login">Login</Button>
+            <Link to="/register">
+              <Button className="mx-3">Sign Up</Button>
+            </Link>
+            <Link to="/login">
+              <Button>Login</Button>
+            </Link>
           </div>
         )}
       </Container>

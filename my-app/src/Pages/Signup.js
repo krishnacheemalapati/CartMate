@@ -80,7 +80,7 @@ export default function Signup() {
         </form>
         <p className="already-have" style={{ color: "white" }}>
           Already have an account?{" "}
-          <Link style={{ color: "white", textDecoration: "none" }} to="/">
+          <Link style={{ color: "white", textDecoration: "none" }} to="/login">
             Sign in.
           </Link>
         </p>
