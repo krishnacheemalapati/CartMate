@@ -1,33 +1,36 @@
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import BulletPoint from "../Components/BulletPoint";
-import { AiFillCheckCircle } from "react-icons/ai";
+// import { AiFillCheckCircle } from "react-icons/ai";
 import cart from "../cartmate.png";
 
-import { UserAuth } from "../Context/AuthContext";
+// import { UserAuth } from "../Context/AuthContext";
 
 // import { doc, setDoc, addDoc, collection } from "firebase/firestore"
 // import { db } from "../firebase"
 
 export default function Signup() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
-  const { createUser } = UserAuth();
+  // const [email, setEmail] = useState("");
+  const [setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  const [setPassword] = useState("");
+  // const [username, setUsername] = useState("");
+  const [setUsername] = useState("");
+  // const { createUser } = UserAuth();
   const navigate = useNavigate();
 
   //const users = collection(db, 'users')
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const credential = await createUser(email, password);
+    // const credential = await createUser(email, password);
     navigate("/");
   };
 
   return (
     <div className="signup-main">
       <div className="signup-info">
-        <img className="" src={cart} width="125px" height="125px"></img>
+        <img className="" src={cart} width="125px" height="125px" alt="cart logo"></img>
 
         <BulletPoint
           header="Get started quickly"
