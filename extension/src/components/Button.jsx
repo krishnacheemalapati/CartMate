@@ -8,7 +8,6 @@ function Button({ text }) {
         const productTitle = response.productTitle;
         const productPrice = response.productPrice;
         const productImg = response.productImg;
-        console.log(productTitle, productPrice, productImg)
       });
     });
   }
