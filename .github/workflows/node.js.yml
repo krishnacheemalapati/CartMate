@@ -3,10 +3,6 @@
 
 name: Node.js CI
 
-defaults:
-  run:
-    working-directory: my-app
-
 on:
   push:
     branches: [ "main" ]
@@ -15,6 +11,10 @@ on:
 
 jobs:
   build:
+
+    defaults:
+      run:
+        working-directory: my-app
 
     runs-on: ubuntu-latest
 
