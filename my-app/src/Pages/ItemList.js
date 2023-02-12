@@ -13,7 +13,7 @@ class ItemList extends React.Component{
         return (
             <div className="flex flex-col items-center justify-center min-h-screen">
               {listItems.map((item) => (
-                <Item item={item} />
+                <Item item={item} key={item.name} />
               ))}
             </div>
           );
