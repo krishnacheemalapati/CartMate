@@ -27,7 +27,7 @@ function Login() {
   return (
     <div className="signup-main">
       <div className="signup-info">
-        <img className="" src={cart} width="125px" height="125px"></img>
+        <img className="" src={cart} width="125px" height="125px" alt="logo"></img>
 
         <BulletPoint
           header="Get started quickly"
