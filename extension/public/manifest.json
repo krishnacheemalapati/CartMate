@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "My Chrome Extension",
+  "name": "CartMate",
   "version": "1.0",
-  "description": "A sample Chrome extension",
+  "description": "A shared shopping cart app that allows multiple users to add, edit, and view items in a shared virtual shopping cart for group purchases.",
   "action": {
     "default_popup": "index.html"
   },
@@ -17,5 +17,11 @@
       "matches": ["<all_urls>"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "icons": {
+    "16": "./cartmate.png",
+    "32": "./cartmate.png",
+    "48": "./cartmate.png",
+    "128": "./cartmate.png"
+  }
 }
