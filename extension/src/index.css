@@ -89,3 +89,9 @@ body {
   height: 27px;
   margin-top: 7px;
 }
+
+
+
+.cart {
+  display: flex;
+}

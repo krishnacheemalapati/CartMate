@@ -1,14 +1,17 @@
+/*global chrome*/
 import Button from "../components/Button";
 import cart from "../../src/cartmate.png";
 import { AiFillHome } from "react-icons/ai"
 import { AiOutlineUser } from "react-icons/ai"
 import { useState } from "react";
 import { UserAuth } from "../AuthContext"
-import { setDoc } from "firebase/firestore";
+import { setDoc, addDoc, arrayUnion, updateDoc, FieldValue, getDoc } from "firebase/firestore";
 import { doc } from "firebase/firestore";
 import { db } from "../firebase";
 
+import Cart from "../components/Cart"
 
+import { collection } from "firebase/firestore";
 
 
 export default function Home() {
@@ -17,8 +20,26 @@ export default function Home() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [username, setUsername] = useState("")
-    const { createUser, user, logout, name } = UserAuth()
+    const { createUser, user, logout, name, carts } = UserAuth()
+    const [credential, setCredential] = useState({})
 
+    const [currentItem, setCurrentItem] = useState({
+        name: "Book",
+        price: 49.99
+    })
+
+    function addCartToUser(uid, id) {
+        const docRef = doc(db, "users", uid)
+        updateDoc(docRef, {
+            carts: arrayUnion(id)
+        }, { merge: true })
+
+
+    }
+
+
+
+    console.log(carts)
 
 
 
@@ -84,9 +105,60 @@ export default function Home() {
                 <div className="main">
                     <img src="https://cdn.honey.io/images/extension/coiny_honeybutton_dollar.png" style={{ height: "150px", width: "200px" }}></img>
                     <h1 style={{ paddingLeft: "20px", paddingRight: "20px" }}>Hey, {name}!</h1>
+                    {carts.length === 0 ? <button onClick={() => {
+                        const doc = addDoc(collection(db, "carts"), {
+                            items: arrayUnion(currentItem),
+                            name: "Cart"
+                        }).then(docu => {
 
+                            const id = docu.id
+
+
+                            chrome.tabs.update({ url: `http://localhost:3000/cart/${id}` });
+                            window.close(); // Note: window.close(), not this.close()
+                            const uid = localStorage.getItem("uid")
+
+
+
+                            console.log(uid)
+                            console.log(id)
+
+                            addCartToUser(uid, id)
+
+
+
+
+
+
+
+
+
+
+
+
+                        })
+
+
+
+                    }} className="join">Add to Cart</button> : <>
+                        <div className="your-carts">Your Carts</div>
+                        <div className="cart-container">
+                            {carts.map(cart => {
+                                //cart is an id of a cart
+                                //turn cart id and grab it from firestore then grab relevant data
+                                const docRef = doc(db, "carts", cart)
+                                const test = getDoc(docRef).then(t => console.log
+                                    (t.data()))
+
+
+                                return <Cart name="Cart" />
+                            })}
+                        </div>
+
+                    </>}
                     <button onClick={() => {
                         logout()
+                        localStorage.removeItem("uid")
                     }} className="join">Log Out</button>
 
 
@@ -124,15 +196,20 @@ export default function Home() {
                         <button onClick={() => {
                             createUser(email, password)
                                 .then(credential => {
+                                    setCredential(credential)
                                     setDoc(doc(db, "users", credential.user.uid), {
                                         email: email,
                                         username: username,
                                         carts: []
 
                                     });
+                                    localStorage.setItem("uid", credential.user.uid)
                                 })
 
+
                         }} className="join">Sign Up</button>
+
+
 
 
                     </div>

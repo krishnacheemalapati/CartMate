@@ -20,6 +20,7 @@ export const AuthContextProvider = ({ children }) => {
 
     const [user, setUser] = useState({});
     const [name, setName] = useState("")
+    const [carts, setCarts] = useState([])
 
 
 
@@ -43,7 +44,7 @@ export const AuthContextProvider = ({ children }) => {
                 const unsub = onSnapshot(doc(db, "users", currentUser.uid), (doc) => {
 
 
-
+                    setCarts(doc.data().carts)
 
 
 
@@ -80,7 +81,7 @@ export const AuthContextProvider = ({ children }) => {
 
 
     return (
-        <UserContext.Provider value={{ createUser, user, logout, name }}>
+        <UserContext.Provider value={{ createUser, user, logout, name, carts }}>
             {children}
         </UserContext.Provider>
     );
