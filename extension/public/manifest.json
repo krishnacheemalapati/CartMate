@@ -17,5 +17,11 @@
       "matches": ["<all_urls>"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "icons": {
+    "16": "./cartmate.png",
+    "32": "./cartmate.png",
+    "48": "./cartmate.png",
+    "128": "./cartmate.png"
+  }
 }
