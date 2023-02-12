@@ -8,8 +8,8 @@ function Login() {
   const { signIn } = UserAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [error, setError] = useState("");
-  const [setError] = useState("");
+  const [error, setError] = useState("");
+  // const [setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
