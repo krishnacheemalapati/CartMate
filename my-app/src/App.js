@@ -1,13 +1,37 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import BrandExample from "./Components/Navbar";
-import Home from "./Routes/Home";
+import NavbarComp from "./Components/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./Pages/Login";
+import Signup from "./Pages/Signup";
+import Home from "./Pages/Home";
+import { AuthContextProvider } from "./Context/AuthContext";
+import ProtectedRoute from "./Pages/ProtectedRoute";
+import Dashboard from "./Pages/Dashboard";
+import JoinCart from "./Pages/JoinCart";
 
 function App() {
   return (
-    <div className="App">
-      <BrandExample />
-      <Home />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <AuthContextProvider>
+          <NavbarComp />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Signup />} />
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute to="/">
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="/cart/:id" element={<JoinCart />} />
+          </Routes>
+        </AuthContextProvider>
+      </div>
+    </BrowserRouter>
   );
 }
 
