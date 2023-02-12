@@ -1,2 +1,2 @@
 [config]
-project = portalDirectory/subDirectory/dist
+project = ./my-app
